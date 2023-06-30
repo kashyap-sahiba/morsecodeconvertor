@@ -1,5 +1,6 @@
 package com.morsecodeconvertor.morsecodeconvertor.rest;
 
+import com.morsecodeconvertor.morsecodeconvertor.entity.ConversionObject;
 import com.morsecodeconvertor.morsecodeconvertor.service.MorseCodeConvertorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,13 +17,15 @@ public class MorseController {
     }
 
     @PostMapping("/englishtomorse")
-    public String englishToMorse(@RequestBody String english){
-        return morseCodeConvertorService.englishToMorse(english);
+    public ConversionObject englishToMorse(@RequestBody ConversionObject conversionObject){
+        conversionObject.setConversionString(morseCodeConvertorService.englishToMorse(conversionObject.getConversionString()));
+        return conversionObject;
     }
 
     @PostMapping("/morsetoenglish")
-    public String morseToEnglish(@RequestBody String morse){
-        return  morseCodeConvertorService.morseToEnglish(morse);
+    public ConversionObject morseToEnglish(@RequestBody ConversionObject conversionObject){
+        conversionObject.setConversionString(morseCodeConvertorService.morseToEnglish(conversionObject.getConversionString()));
+        return conversionObject;
     }
 
 }

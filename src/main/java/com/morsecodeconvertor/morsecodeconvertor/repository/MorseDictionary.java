@@ -48,7 +48,7 @@ public class MorseDictionary {
         englishToMorse.put("8","---..");
         englishToMorse.put("9","----.");
         englishToMorse.put("0","-----");
-        englishToMorse.put(" ","_");
+        englishToMorse.put(" ","/");
 
         return englishToMorse.get(x);
 }
@@ -91,7 +91,7 @@ public class MorseDictionary {
         morseToEnglish.put("---..","8");
         morseToEnglish.put("----.","9");
         morseToEnglish.put("-----","0");
-        morseToEnglish.put("_"," ");
+        morseToEnglish.put("/"," ");
 
         return morseToEnglish.get(x);
     }

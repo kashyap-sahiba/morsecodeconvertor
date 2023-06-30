@@ -19,7 +19,10 @@ public class MorseCodeConvertorServiceImpl implements MorseCodeConvertorService{
         String morse="";
 
         for(int i=0;i<x.length();i++){
-            morse=morse+morseDictionary.EnglishToMorse(String.valueOf(x.charAt(i)))+" ";
+            if(i==x.length()-1){
+                morse=morse+morseDictionary.EnglishToMorse(String.valueOf(x.charAt(i)));}
+            else{
+            morse=morse+morseDictionary.EnglishToMorse(String.valueOf(x.charAt(i)))+" ";}
         }
 
         System.out.println(morse);
